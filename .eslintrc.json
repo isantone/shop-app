@@ -1,10 +1,11 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "plugins": ["@nrwl/nx", "@typescript-eslint", "simple-import-sort", "prettier"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "parserOptions": { "project": "./tsconfig.*?.json" },
       "rules": {
         "@nrwl/nx/enforce-module-boundaries": [
           "error",
@@ -23,8 +24,52 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nrwl/nx/typescript"],
-      "rules": {}
+      "parserOptions": { "project": "./tsconfig.*?.json" },
+      "extends": [
+        "plugin:@nrwl/nx/typescript",
+        "airbnb-base",
+        "airbnb-typescript/base",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/recommended"
+      ],
+      "rules": {
+        "no-unneeded-ternary": "error",
+        "no-nested-ternary": "error",
+        "comma-dangle": ["error", "always-multiline"],
+
+        "import/no-unresolved": "off",
+        "import/order": "off",
+        "import/prefer-default-export": "off",
+        "import/first": "error",
+        "import/newline-after-import": "error",
+        "import/no-duplicates": "error",
+
+        "simple-import-sort/exports": "error",
+        "simple-import-sort/imports": [
+          "error",
+          {
+            // The default grouping, but with type imports last as a separate group
+            "groups": [
+              ["^\\u0000"],
+              ["^@angular", "^@?\\w"],
+              ["^@mvideo/api", "^@mvideo/shared", "^@mvideo/ui-kit", "^@mvideo/ui-kit2", "^@mvideo/utils"],
+              ["^@mvideo/"],
+              ["^"],
+              ["^\\."],
+              ["^.+\\u0000$"]
+            ]
+          }
+        ],
+
+        "prettier/prettier": [
+          "error",
+          {
+            "endOfLine": "auto"
+          }
+        ]
+      }
     },
     {
       "files": ["*.js", "*.jsx"],

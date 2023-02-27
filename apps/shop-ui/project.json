@@ -1,22 +1,22 @@
 {
-  "name": "shop",
+  "name": "shop-ui",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/shop/src",
-  "prefix": "shop-app",
+  "sourceRoot": "apps/shop-ui/src",
+  "prefix": "isa",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/shop",
-        "index": "apps/shop/src/index.html",
-        "main": "apps/shop/src/main.ts",
+        "outputPath": "dist/apps/shop-ui",
+        "index": "apps/shop-ui/src/index.html",
+        "main": "apps/shop-ui/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/shop/tsconfig.app.json",
+        "tsConfig": "apps/shop-ui/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/shop/src/favicon.ico", "apps/shop/src/assets"],
-        "styles": ["apps/shop/src/styles.scss"],
+        "assets": ["apps/shop-ui/src/favicon.ico", "apps/shop-ui/src/assets"],
+        "styles": ["apps/shop-ui/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -50,10 +50,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "shop:build:production"
+          "browserTarget": "shop-ui:build:production"
         },
         "development": {
-          "browserTarget": "shop:build:development"
+          "browserTarget": "shop-ui:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -61,21 +61,21 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "shop:build"
+        "browserTarget": "shop-ui:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/shop/**/*.ts", "apps/shop/**/*.html"]
+        "lintFilePatterns": ["apps/shop-ui/**/*.ts", "apps/shop-ui/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/shop/jest.config.ts",
+        "jestConfig": "apps/shop-ui/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {

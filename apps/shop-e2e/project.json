@@ -8,12 +8,12 @@
       "executor": "@nrwl/cypress:cypress",
       "options": {
         "cypressConfig": "apps/shop-e2e/cypress.config.ts",
-        "devServerTarget": "shop:serve:development",
+        "devServerTarget": "shop-ui:serve:development",
         "testingType": "e2e"
       },
       "configurations": {
         "production": {
-          "devServerTarget": "shop:serve:production"
+          "devServerTarget": "shop-ui:serve:production"
         }
       }
     },
@@ -26,5 +26,5 @@
     }
   },
   "tags": [],
-  "implicitDependencies": ["shop"]
+  "implicitDependencies": ["shop-ui"]
 }

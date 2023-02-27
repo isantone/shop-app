@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'shop',
+  displayName: 'shop-ui',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -9,7 +9,7 @@ export default {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/apps/shop',
+  coverageDirectory: '../../coverage/apps/shop-ui',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },
