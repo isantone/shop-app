@@ -1,3 +1,47 @@
-<p>main-page works!</p>
+<!-- <p>main-page works!</p> -->
 
-<isa-chips></isa-chips>
+<div class="main-page__chips-panel">
+  <isa-chips aria-label="Dog selection">
+    <isa-chip>
+      <div class="main-page__dog-info">
+        <img
+          class="main-page__dog-image"
+          src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+          alt="Photo of a Shiba Inu"
+        />
+        <span class="main-page__dog-title">Dog One</span>
+      </div>
+    </isa-chip>
+
+    <isa-chip>
+      <div class="main-page__dog-info">
+        <img
+          class="main-page__dog-image"
+          src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+          alt="Photo of a Shiba Inu"
+        />
+        <span class="main-page__dog-title">Dog two</span>
+      </div>
+    </isa-chip>
+
+    <isa-chip>
+      <div class="main-page__dog-info">
+        <img
+          class="main-page__dog-image"
+          src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+          alt="Photo of a Shiba Inu"
+        />
+        <span class="main-page__dog-title">Dog 3</span>
+      </div>
+    </isa-chip>
+  </isa-chips>
+</div>
+
+<div
+  *ngFor="let chipsExample of chipsExamples"
+  class="main-page__chips-panel"
+>
+  <isa-chips>
+    <isa-chip *ngFor="let chip of chipsExample">{{ chip.title }}</isa-chip>
+  </isa-chips>
+</div>

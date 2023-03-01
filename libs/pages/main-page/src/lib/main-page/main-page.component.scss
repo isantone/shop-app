@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  padding: 20px;
+}
+
+.main-page__chips-panel {
+  width: 380px;
+
+  padding: 0 20px 15px;
+  margin-bottom: 20px;
+
+  background-color: rgba(255, 230, 235, 0.666);
+  border: 1px solid rgba(250, 128, 114, 0.777);
+}
+
+.main-page__dog-info {
+  display: flex;
+}
+
+.main-page__dog-title {
+  line-height: 36px;
+}
+
+.main-page__dog-image {
+  height: 36px;
+  margin-right: 5px;
+}
