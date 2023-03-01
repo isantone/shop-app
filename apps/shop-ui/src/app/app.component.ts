@@ -6,8 +6,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  title = 'Shop App';
-
-  someProp = 'default value';
-}
+export class AppComponent {}
