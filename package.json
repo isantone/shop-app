@@ -2,7 +2,10 @@
   "name": "shop-app",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "lint:all": "nx run-many --target=lint --all --parallel --maxParallel=4",
+    "lint:all:fix": "npm run lint:all -- --fix"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~15.1.0",
@@ -48,6 +51,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-rxjs": "^5.0.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "jest": "28.1.1",
     "jest-environment-jsdom": "28.1.1",
     "jest-preset-angular": "~12.2.3",

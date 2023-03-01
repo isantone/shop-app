@@ -1,7 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx", "@typescript-eslint", "simple-import-sort", "prettier"],
+  "plugins": ["@nrwl/nx", "@typescript-eslint", "simple-import-sort", "unused-imports", "prettier"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -32,12 +32,25 @@
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:import/recommended"
+        "plugin:import/recommended",
+        // Turns off all rules that might conflict with Prettier
+        "prettier"
       ],
       "rules": {
         "no-unneeded-ternary": "error",
         "no-nested-ternary": "error",
         "comma-dangle": ["error", "always-multiline"],
+        "no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+          "error",
+          {
+            "vars": "all",
+            "varsIgnorePattern": "^_",
+            "args": "after-used",
+            "argsIgnorePattern": "^_"
+          }
+        ],
 
         "import/no-unresolved": "off",
         "import/order": "off",
@@ -45,6 +58,7 @@
         "import/first": "error",
         "import/newline-after-import": "error",
         "import/no-duplicates": "error",
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": ["**/test-setup.ts"] }],
 
         "simple-import-sort/exports": "error",
         "simple-import-sort/imports": [
@@ -54,8 +68,8 @@
             "groups": [
               ["^\\u0000"],
               ["^@angular", "^@?\\w"],
-              ["^@mvideo/api", "^@mvideo/shared", "^@mvideo/ui-kit", "^@mvideo/ui-kit2", "^@mvideo/utils"],
-              ["^@mvideo/"],
+              ["^@shop-app/api", "^@shop-app/shared", "^@shop-app/ui-kit", "^@shop-app/utils"],
+              ["^@shop-app/"],
               ["^"],
               ["^\\."],
               ["^.+\\u0000$"]
