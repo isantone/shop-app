@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { ChipsComponent } from './chips.component';
+import { ChipsComponent } from './chips/chips.component';
 
 @NgModule({
   imports: [CommonModule],
