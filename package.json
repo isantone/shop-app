@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "start": "nx serve shop-ui",
     "lint:all": "nx run-many --target=lint --all --parallel --maxParallel=4",
     "lint:all:fix": "npm run lint:all -- --fix"
   },
