@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChipsComponent } from './chips/chips.component';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [ChipsComponent],
-  exports: [ChipsComponent],
+  declarations: [],
+  exports: [],
 })
 export class UiKitModule {}
