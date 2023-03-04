@@ -6,7 +6,7 @@
     "start": "nx serve shop-ui",
     "lint:all": "nx run-many --target=lint --all --parallel --maxParallel=4",
     "lint:all:fix": "npm run lint:all -- --fix",
-    "build:prod": "nx run shop-ui:build:production"
+    "build:prod": "nx run shop-ui:build:production --output-path=docs --base-href=/shop-app/"
   },
   "private": true,
   "dependencies": {

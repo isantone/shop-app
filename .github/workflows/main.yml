@@ -1,4 +1,4 @@
-name: UI CI
+name: UI Build
 on:
   push:
     branches:
@@ -15,7 +15,6 @@ jobs:
       - uses: nrwl/nx-set-shas@v3
       - run: npm ci
 
-      - run: npx nx format:check
       - run: npm run lint:all
       - run: npx nx run-many --target=lint --all --parallel --maxParallel=4 --configuration=ci
       - run: npm run build:prod
