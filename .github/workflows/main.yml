@@ -1,0 +1,21 @@
+name: UI CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+        with:
+          fetch-depth: 0
+      - uses: nrwl/nx-set-shas@v3
+      - run: npm ci
+
+      - run: npx nx format:check
+      - run: npm run lint:all
+      - run: npx nx run-many --target=lint --all --parallel --maxParallel=4 --configuration=ci
+      - run: npm run build:prod
